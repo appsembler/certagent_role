@@ -1,2 +1,6 @@
 ---
-# handlers file for certagent
+- name: reload systemd configuration
+  command: systemctl daemon-reload
+
+- name: restart cert_agent
+  service: name=cert_agent state=restarted
