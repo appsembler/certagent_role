@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- added molecule tests
 ### Changed
+- switch to `copy` for correct idempotency
+- clean up creation of `.ssh` directory
 ### Removed
 
 ## [v1.0.2] - 2020-12-17
