@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    # these aren't strictly deps for certagent
+    # ansible requires certain packages to be installed
+    # on the host for it to be able to run `git` and `pip`
+    # tasks
+    - name: "install ansible deps"
+      apt:
+        name:
+          - git
+          - python-setuptools
+          - virtualenv
+        state: present
+        update_cache: yes
+
+    - name: "Include certagent_role"
+      include_role:
+        name: "certagent_role"
